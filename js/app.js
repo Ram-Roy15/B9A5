@@ -13,13 +13,14 @@ for (const seat of allSeats) {
     const tikitNumber = e.target.innerText;
     console.log(tikitNumber);
     totalAmount = totalAmount + 550;
-    if (bookedSeats < 40) {
+    if (bookedSeats < 4) {
       bookedSeats = bookedSeats + 1;
       grandTotal = grandTotal + 550;
       setInnerText("booked-seat", bookedSeats);
       setInnerText("grand-total", grandTotal);
     } else {
-      alert("No seat available");
+      alert("You can only select four tickets");
+      return bookedSeats;
     }
     availableSeats = 40 - bookedSeats;
     setInnerText("availavble-seat", availableSeats);
