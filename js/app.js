@@ -11,13 +11,12 @@ for (const seat of allSeats) {
   seat.addEventListener("click", function (e) {
     e.target.style.backgroundColor = "#1cd100ff";
     const tikitNumber = e.target.innerText;
-    console.log(tikitNumber);
     totalAmount = totalAmount + 550;
     if (bookedSeats < 4) {
       bookedSeats = bookedSeats + 1;
       grandTotal = grandTotal + 550;
       setInnerText("booked-seat", bookedSeats);
-      setInnerText("grand-total", grandTotal);
+      // setInnerText("grand-total", grandTotal);
     } else {
       alert("You can only select four tickets");
       return bookedSeats;
@@ -66,4 +65,18 @@ document.getElementById("go-home").addEventListener("click", function () {
   removeClassList("footer");
   removeClassList("footer");
   addClassList("new-section");
+});
+
+document.getElementById("apply-btn").addEventListener("click", function () {
+  const cupon = getValue("cupon-value");
+  let discountTotal = 0;
+  const cuponHolder = document.getElementById("cupon-holder");
+  if (cupon === "NEW15") {
+    cuponHolder.classList.add("hidden");
+    discountTotal = grandTotal - (grandTotal * 15) / 100;
+    const roundTotal = Math.round(discountTotal);
+    setInnerText("grand-total", roundTotal);
+  } else {
+    alert("Plese enter a valid cupon");
+  }
 });
