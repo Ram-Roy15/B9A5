@@ -32,6 +32,7 @@ document.getElementById("next-btn").addEventListener("click", function () {
 
   if (name === "" || number === "" || email === "") {
     submitBtn.disable = true;
+    alert("you have to fill the form ");
   } else {
     addClassList("header");
     addClassList("main");
@@ -39,4 +40,11 @@ document.getElementById("next-btn").addEventListener("click", function () {
     addClassList("footer");
     removeClassList("new-section");
   }
+});
+document.getElementById("go-home").addEventListener("click", function () {
+  removeClassList("header");
+  removeClassList("main");
+  removeClassList("footer");
+  removeClassList("footer");
+  addClassList("new-section");
 });
