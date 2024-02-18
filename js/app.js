@@ -16,7 +16,7 @@ for (const seat of allSeats) {
       bookedSeats = bookedSeats + 1;
       grandTotal = grandTotal + 550;
       setInnerText("booked-seat", bookedSeats);
-      // setInnerText("grand-total", grandTotal);
+      setInnerText("grand-total", grandTotal);
     } else {
       alert("You can only select four tickets");
       return bookedSeats;
