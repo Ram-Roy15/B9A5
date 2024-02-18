@@ -1,9 +1,7 @@
-// document.addEventListener("click", function (e) {
+document.getElementById("btn-scroll").addEventListener("click", function () {
+  window.scrollTo(0, document.body.scrollHeight);
+});
 
-//   for (const seat of allSeats) {
-//     console.log(e.target.seat);
-//   }
-// });
 const allSeats = document.getElementsByClassName("seat");
 let bookedSeats = 0;
 let availableSeats = 40;
@@ -22,12 +20,4 @@ for (const seat of allSeats) {
     setInnerText("availavble-seat", availableSeats);
     setInnerText("total-price", totalAmount);
   });
-}
-const totalPrice = document.getElementById("total-price").innerText;
-console.log(typeof totalPrice);
-
-function converToNumber(id) {
-  const stringNumber = document.getElementById(id).innerText;
-  const number = parseInt(stringNumber);
-  return number;
 }
