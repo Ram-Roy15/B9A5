@@ -9,6 +9,7 @@ let totalAmount = 0;
 for (const seat of allSeats) {
   seat.addEventListener("click", function (e) {
     e.target.style.backgroundColor = "#1cd100ff";
+
     totalAmount = totalAmount + 550;
     if (bookedSeats < 40) {
       bookedSeats = bookedSeats + 1;
