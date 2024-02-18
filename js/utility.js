@@ -7,3 +7,16 @@ function converToNumber(id) {
   const number = parseInt(stringNumber);
   return number;
 }
+function getValue(id) {
+  const value = document.getElementById(id).value;
+  return value;
+}
+
+function addClassList(id) {
+  const name = document.getElementById(id);
+  name.classList.add("hidden");
+}
+function removeClassList(id) {
+  const name = document.getElementById(id);
+  name.classList.remove("hidden");
+}

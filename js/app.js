@@ -21,3 +21,22 @@ for (const seat of allSeats) {
     setInnerText("total-price", totalAmount);
   });
 }
+
+document.getElementById("next-btn").addEventListener("click", function () {
+  const name = getValue("enter-name");
+
+  const number = getValue("phone-number");
+
+  const email = getValue("email-id");
+  const submitBtn = document.getElementById("next-btn");
+
+  if (name === "" || number === "" || email === "") {
+    submitBtn.disable = true;
+  } else {
+    addClassList("header");
+    addClassList("main");
+    addClassList("footer");
+    addClassList("footer");
+    removeClassList("new-section");
+  }
+});
